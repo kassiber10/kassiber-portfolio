@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Svelte Skill Streak",
+    "description": "A brief description of the project",
+    "image": "../src/assets/images/projects/pro1.jpg",
+    "skills": "https://skillicons.dev/icons?i=js,html,css,wasm"
+  },
+  {
+    "title": "Project 2",
+    "description": "A brief description of the project 2",
+    "image": "../src/assets/images/projects/pro2.jpg",
+    "skills": "https://skillicons.dev/icons?i=js,html,css,wasm"
+  },
+  {
+    "title": "Project 3",
+    "description": "A brief description of the project 2",
+    "image": "../src/assets/images/projects/pro3.jpg",
+    "skills": "https://skillicons.dev/icons?i=js,html,css,firebase"
+  }
+]

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Rubik:wght@300;600&display=swap');
+
+:root {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: clamp(.8rem, 1.25vw, 1.5rem);
+
+  color-scheme: light dark;
+  color: rgba(250, 250, 250, 0.9);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(351deg, rgba(2, 0, 36, 1) 0%, rgba(0, 0, 0, 1) 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  min-height: 100%;
+
+  box-sizing: border-box;
+
+  --color-light: #deb91c;
+  --color-medium: #de7820;
+  --color-dark: #de5326;
+}
+
+
+header {
+  font-family: 'Nabla', cursive;
+  font-size: clamp(4rem, 8vw, 16rem);
+  text-transform: uppercase;
+  margin: auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-light);
+  text-align: left;
+
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-dark);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--color-medium);
+  padding-bottom: 1rem;
+}
+
+body {
+  margin: 2rem 0 0 0;
+  display: flex;
+  place-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  width: max(15rem, 100%);
+}
+
+
+button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-family: inherit;
+  background-color: var(--color-dark);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--color-light);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--color-medium);
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  width: max(400px, 70%);
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+}
