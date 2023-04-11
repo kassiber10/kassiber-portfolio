@@ -1,9 +1,9 @@
 <template>
   <header>
-    <section>
+   
       <h1><router-link to="/">Hello, world!</router-link></h1>
       <nav-element></nav-element>
-    </section>
+   
   </header>
 </template>
 
@@ -17,5 +17,8 @@ export default {
 </script>
 
 <style scoped>
-
+header {
+  display: flex;
+  flex-direction: row;
+}
 </style>

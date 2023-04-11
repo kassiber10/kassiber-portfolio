@@ -47,9 +47,10 @@ img {
 .skills {
   margin-top: .5rem;
   max-width: 10rem;
+  
 }
 article {
-  background-color: darkcyan;
+  /* background-color: darkcyan; */
   /* flex-direction: row; */
   /* max-width: 50%; */
   border-radius: 4px;
@@ -58,7 +59,8 @@ article {
   margin: 1rem;
 }
 article:hover {
-  border: 1px solid white;
+  border: 1px solid var(--color-white);
+ 
 }
 button {
   width: 100%;
