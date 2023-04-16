@@ -4,7 +4,7 @@
   font-family: 'Rubik', sans-serif;
   line-height: 1.5;
   font-weight: 300;
-  font-size: clamp(.8rem, 1.25vw, 1.5rem);
+  font-size: clamp(.8rem, 1vw, 1.5rem);
 
   color-scheme: light dark;
   color: var(--color-white);
@@ -28,8 +28,8 @@
 
 
 header {
-  font-family: 'Nabla', cursive;
-  font-size: clamp(4rem, 8vw, 16rem);
+  font-family: 'Rubik', cursive;
+  font-size: clamp(2rem, 6vw, 14rem);
   text-transform: uppercase;
   margin: auto;
 }
@@ -78,7 +78,7 @@ section {
 
 
 button {
-  border-radius: 6px;
+  border-radius: 3px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-family: inherit;

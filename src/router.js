@@ -15,7 +15,7 @@ const router = createRouter({
   routes: [
     { path: "/projects", name: "projects", component: ProjectsIndex },
     { path: "/project/:id", name: "project", component: ProjectDetails },
-    { path: "/", name: "root", omponent: LandingPage },
+    { path: "/", name: "root", component: LandingPage },
     { path: "/contact", name: "contact", component: ContactIndex },
     // { path: "/portfolio", component: PortfolioPage },
     // { path: "/galeries", component: GaleriePage },
