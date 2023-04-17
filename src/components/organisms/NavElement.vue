@@ -1,19 +1,18 @@
 <template>
   <nav>
-    <!-- <router-link to="/projects"><button>Projects</button></router-link>
-    <router-link to="/contact"><button>Contact</button></router-link> -->
     <ul>
-
-      <li><router-link to="/projects">Projects</router-link></li>
-      <li><router-link to="/contact">Contact</router-link></li>
+      <li @click="$emit('clickedLink', 'projects')">
+        <router-link to="/projects">Projects</router-link>
+      </li>
+      <li @click="$emit('clickedLink', 'contact')"><router-link to="/contact">Contact</router-link></li>
     </ul>
-    
   </nav>
 </template>
 
 <script>
 export default {
   name: "NavElement",
+  emits: ["clickedLink"],
 };
 </script>
 
@@ -26,9 +25,20 @@ li {
   font-size: 2rem;
   list-style: none;
   text-align: right;
-}
-li:hover {
-  background-color: white;
+  border-bottom: 1px dashed var(--color-light);
 }
 
+li:hover::before {
+  content: "➔ ";
+  color: var(--color-light);
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+  ul {
+    padding: 0;
+  }
+}
 </style>

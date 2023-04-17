@@ -5,7 +5,8 @@
       <p>{{ description }}</p>
       <img :src="skills" alt="dev skill icons" />
       <hr />
-      <button @click="$emit('back')">back</button>
+      <button @click="$emit('back')">Back</button>
+      <button><a :href="url" target="_blank">Visit Project</a></button>
     </div>
     <div>
       <img :src="image" />
@@ -38,12 +39,21 @@ export default {
       type: String,
       required: true,
     },
+    url: {
+      type: String,
+      required: false,
+    },
+  },
+  methods: {
+    visitProject() {
+      location.href = this.url;
+      location.target = blank;
+    },
   },
 };
 </script>
 
 <style scoped>
-
 img {
   max-width: 100%;
 }
@@ -56,5 +66,9 @@ div {
 }
 p {
   text-align: left;
+}
+button {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 </style>

@@ -1,5 +1,4 @@
 <template>
-  <h2>./Projects</h2>
   <section>
     <project-card
       v-if="!isLoading && !projectToLoad"
@@ -19,6 +18,7 @@
       :description="projectToLoad.description"
       :image="projectToLoad.image"
       :skills="projectToLoad.skills"
+      :url="projectToLoad.url"
       @back="back"
     ></project-details>
   </section>
@@ -45,24 +45,29 @@ export default {
       ],
       projectToLoad: undefined,
       isLoading: false,
+      error: "",
     };
   },
   async mounted() {
     // load projects from pinia
     this.isLoading = true;
-    this.projects = await this.projectsStore.getProjects;
+    try {
+      this.projects = await this.projectsStore.getProjects;
+    } catch (error) {
+      this.error = error.message || "Something went wrong!";
+    }
+
     this.isLoading = false;
   },
   methods: {
     loadProjectDetail(id) {
       if (this.projects) {
         this.projectToLoad = this.projects.find((p) => p.id == id);
-        
       }
     },
     back() {
       this.projectToLoad = !this.projectToLoad;
-    }
+    },
   },
   computed: {
     ...mapStores(useProjectsStore),
@@ -70,4 +75,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h2 {
+  text-align: right;
+  /* background-color: var(--color-white); */
+  border-bottom: 1px dashed var(--color-white);
+}
+</style>

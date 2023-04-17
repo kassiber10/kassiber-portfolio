@@ -11,13 +11,15 @@
     "title": "Fussball unter der Lupe",
     "description": "A brief description of the project 2",
     "image": "../src/assets/images/projects/pro2.jpg",
-    "skills": "https://skillicons.dev/icons?i=js,html,css,wasm"
+    "skills": "https://skillicons.dev/icons?i=js,html,css,wasm",
+    "url": "https://www.rolandleser.com"
   },
   {
     "id": 3,
     "title": "22 Pictures",
-    "description": "A brief description of the project 2",
+    "description": "Fullstack Portfolio Site with a CMS in PHP.",
     "image": "../src/assets/images/projects/pro3.jpg",
-    "skills": "https://skillicons.dev/icons?i=js,html,css,firebase"
+    "skills": "https://skillicons.dev/icons?i=js,html,css,php,sql",
+    "url": "https://www.22pictures.at"
   }
 ]

@@ -24,6 +24,12 @@
   --color-light: #deb91c;
   --color-medium: #de7820;
   --color-dark: #de5326;
+
+  --color-1: #186cb8;
+  --color-2: #2a9a9f;
+  --color-3: #f1b211;
+  --color-4: #e83611;
+  --color-5: #f9002f;
 }
 
 
@@ -32,6 +38,8 @@ header {
   font-size: clamp(2rem, 6vw, 14rem);
   text-transform: uppercase;
   margin: auto;
+
+  
 }
 
 
@@ -55,14 +63,15 @@ hr {
 
 a {
   font-weight: 500;
-  color: var(--color-dark);
+  color: var(--color-medium);
   text-decoration: inherit;
 }
 
 a:hover {
-  color: var(--color-medium);
+  color: var(--color-light);
   padding-bottom: 1rem;
 }
+
 
 body {
   margin: 2rem 0 0 0;
