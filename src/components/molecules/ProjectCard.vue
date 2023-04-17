@@ -49,17 +49,22 @@ img.skills {
 article {
   border-radius: 4px;
   text-align: left;
-  padding: 1rem 1rem 1rem 0;
-  margin: 1rem 1rem 1rem 0;
+  padding: 0 1rem 1rem 0;
+  margin: 1rem 3rem 1rem 0;
 }
 article:hover {
   border: 1px dashed var(--color-white);
   padding: 3rem;
-  /* background-color: var(--color-white); */
 }
 
 button {
   width: 100%;
   margin-top: 0.5rem;
+}
+@media (max-width: 600px) {
+ 
+  article {
+    margin: 1rem 0 1rem 0;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 [
-   {
+  {
     "id": 1,
     "title": "Svelte Skill Streak",
     "description": "A brief description of the project",
@@ -9,7 +9,8 @@
   {
     "id": 2,
     "title": "Fussball unter der Lupe",
-    "description": "A brief description of the project 2",
+    "description": "Fullstack Landingpage with order form",
+    "descLong": "The goal was to create the most simple, responsive Landingpage to order a book. The whole project was done with Vue.js in combination with Express.js and Google Cloud Functions",
     "image": "../src/assets/images/projects/pro2.jpg",
     "skills": "https://skillicons.dev/icons?i=js,html,css,wasm",
     "url": "https://www.rolandleser.com"
@@ -17,9 +18,9 @@
   {
     "id": 3,
     "title": "22 Pictures",
-    "description": "Fullstack Portfolio Site with a CMS in PHP.",
-    "image": "../src/assets/images/projects/pro3.jpg",
-    "skills": "https://skillicons.dev/icons?i=js,html,css,php,sql",
+    "description": "Fullstack Portfoliosite for a Photographer.",
+    "image": "../src/assets/images/projects/capture.jpg",
+    "skills": "https://skillicons.dev/icons?i=js,html,css,php,mysql",
     "url": "https://www.22pictures.at"
   }
 ]

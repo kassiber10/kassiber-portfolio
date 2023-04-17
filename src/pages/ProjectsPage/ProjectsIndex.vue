@@ -1,6 +1,7 @@
 <template>
   <section>
     <project-card
+    class="project-card"
       v-if="!isLoading && !projectToLoad"
       v-for="project in projects"
       :key="project.id"
@@ -16,6 +17,7 @@
       :id="projectToLoad.id"
       :title="projectToLoad.title"
       :description="projectToLoad.description"
+      :descLong="projectToLoad.descLong"
       :image="projectToLoad.image"
       :skills="projectToLoad.skills"
       :url="projectToLoad.url"
@@ -76,9 +78,14 @@ export default {
 </script>
 
 <style scoped>
+.project-card:last-child {
+  margin-right: 0;
+
+}
 h2 {
   text-align: right;
   /* background-color: var(--color-white); */
   border-bottom: 1px dashed var(--color-white);
 }
+
 </style>

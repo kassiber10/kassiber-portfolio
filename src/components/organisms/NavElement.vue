@@ -19,13 +19,15 @@ export default {
 <style scoped>
 nav {
   width: 100%;
+  margin-bottom: 3rem;
 }
+
 li {
   font-family: Rubik;
-  font-size: 2rem;
+  font-size: clamp(2rem, .8vw, 1rem);
   list-style: none;
   text-align: right;
-  border-bottom: 1px dashed var(--color-light);
+  border-bottom: 1px dashed var(--color-medium);
 }
 
 li:hover::before {
@@ -33,12 +35,12 @@ li:hover::before {
   color: var(--color-light);
 }
 
-@media (max-width: 600px) {
+ul {
+  padding: 0;
+}
+/* @media (max-width: 600px) {
   header {
     flex-direction: column;
   }
-  ul {
-    padding: 0;
-  }
-}
+} */
 </style>

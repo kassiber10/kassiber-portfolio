@@ -33,14 +33,7 @@
 }
 
 
-header {
-  font-family: 'Rubik', cursive;
-  font-size: clamp(2rem, 6vw, 14rem);
-  text-transform: uppercase;
-  margin: auto;
 
-  
-}
 
 
 h1,
@@ -51,6 +44,7 @@ h5,
 h6 {
   color: var(--color-light);
   text-align: left;
+  margin-top: 0;
 
 }
 

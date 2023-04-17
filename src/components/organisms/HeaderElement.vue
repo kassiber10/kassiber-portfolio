@@ -2,13 +2,14 @@
   <header>
     <h1>
       <router-link to="/" @click="breadcrumb = ''"
-        ><span>Hello, world!</span></router-link
+        ><span>Hello, I'm Alex</span></router-link
       >
     </h1>
+    <h5>new WebDeveloper();</h5>
     <!-- <div> -->
-    <nav-element @clicked-link="clickedLink"></nav-element>
     <!-- </div> -->
   </header>
+  <nav-element @clicked-link="clickedLink"></nav-element>
   <h2 v-if="breadcrumb" class="breadcrumb">{{ breadcrumb }}</h2>
 </template>
 
@@ -33,7 +34,21 @@ export default {
 
 <style scoped>
 header {
-  display: flex;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(250, 250, 250, 0.07) 0,
+    rgba(250, 250, 250, 0.07) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 9px 9px;
+  font-family: "Rubik", cursive;
+  font-size: max(3vw, 2rem);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  flex-wrap: wrap;
 }
 span {
   font-family: Rubik;
@@ -68,8 +83,15 @@ span {
   -webkit-background-clip: text;
   color: transparent;
 }
+
 h1 {
   margin: 0;
+}
+h5 {
+  text-transform: none;
+  margin: 0;
+  font-size: clamp(3.5vw, 2rem, 1.5rem);
+  font-weight: 300;
 }
 .breadcrumb {
   text-transform: uppercase;
@@ -80,9 +102,9 @@ h1 {
 /* .navi {
   width: max(10rem, 100%);
 } */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   header {
     flex-direction: column;
   }
-}
+} */
 </style>

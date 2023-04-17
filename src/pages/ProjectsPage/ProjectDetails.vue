@@ -3,6 +3,7 @@
     <div>
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
+      <p>{{ descLong }}</p>
       <img :src="skills" alt="dev skill icons" />
       <hr />
       <button @click="$emit('back')">Back</button>
@@ -30,6 +31,10 @@ export default {
     description: {
       type: String,
       required: true,
+    },
+    descLong: {
+      type: String,
+      required: false,
     },
     image: {
       type: String,
@@ -71,4 +76,6 @@ button {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+
+
 </style>
