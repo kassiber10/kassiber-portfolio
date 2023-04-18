@@ -6,11 +6,10 @@
       >
     </h1>
     <h5>new WebDeveloper();</h5>
-    <!-- <div> -->
-    <!-- </div> -->
   </header>
   <nav-element @clicked-link="clickedLink"></nav-element>
-  <h2 v-if="breadcrumb" class="breadcrumb">{{ breadcrumb }}</h2>
+  <!-- <h2 v-if="breadcrumb" class="breadcrumb">{{ breadcrumb }}</h2>
+  <h2 v-else class="breadcrumb">a Fullstack Developer with a Frontend Focus</h2> -->
 </template>
 
 <script>
@@ -99,12 +98,5 @@ h5 {
 .breadcrumb::before {
   content: ":: ";
 }
-/* .navi {
-  width: max(10rem, 100%);
-} */
-/* @media (max-width: 600px) {
-  header {
-    flex-direction: column;
-  }
-} */
+
 </style>

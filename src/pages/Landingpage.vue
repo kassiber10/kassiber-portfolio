@@ -1,14 +1,15 @@
 <template>
   <section>
     <div>
-
       <img src="../assets/images/ak.png" />
-      <h1>I'm experienced in</h1>
-      <img src="https://skillicons.dev/icons?i=js,html,css,vuejs,svelte,express,php,mysql,java,firebase" />
+      <p>I'm experienced in
+      <img src="https://skillicons.dev/icons?i=js,html,css,vuejs,php,mysql" /></p>
+      
+      <p>I actually learn
+      <img src="https://skillicons.dev/icons?i=svelte,express,java,firebase" /></p>
     </div>
-<article>
-
-  <h3>I'm a Fullstack Developer who likes Frontends:)</h3>
+    <article>
+  <h1>Fullstack Developer with Design Background</h1>
   <p>
     I’ve recently finished the academic program for Webdevelopment at
     FH Technikum Vienna. I have most experience in frontend development and
@@ -23,7 +24,6 @@
     and get the projects running which is incomparable to most of other
     Positons.</p>
   </p>
-
 </article>
   </section>
 </template>
@@ -35,9 +35,12 @@ export default {
 </script>
 
 <style scoped>
-div {
+h1 {
+  font-size: clamp(3vw, 3rem, 2rem);
   
-  margin-right: 4rem;
+}
+div {  
+  margin-right: 6rem;
 }
 
 p {
@@ -46,10 +49,38 @@ p {
 img {
   width: max(150px, 20%);
   border-radius: 4px;
+  margin-right: 6rem;
 }
+
 article {
- /* background-color: aqua; */
  margin-left: 2rem;
+}
+@media (max-width: 600px) {
+ div {
+  margin-right: 0;
+  display: flex;
+ }
+ div > p {
+  display: flex;
+  flex-direction: column;
+ }
+ p >img {
+background-color: brown;
+min-width: 8rem;
+ }
+ div > img {
+  margin-right: 1.5rem;
+ }
+
+
+ section {
+  /* display: flex; */
+   flex-direction: column;
+ }
+ article {
+ /* background-color: aqua; */
+ margin-left: 0;
+}
 }
 
 </style>

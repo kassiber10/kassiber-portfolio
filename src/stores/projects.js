@@ -5,8 +5,9 @@ export const useProjectsStore = defineStore("projects", {
       {
         title: "",
         description: "",
+        descLong: "",
         image: "",
-        skills: [],
+        skills: "",
       },
     ],
   }),
@@ -15,11 +16,9 @@ export const useProjectsStore = defineStore("projects", {
   },
   actions: {
     async fetchProjects() {
-        const response = await fetch("../src/data/projects.json");
-        // console.log(response);
-        this.projectsList = await response.json();
-        return this.projectsList;
-        // console.log(this.projectsList);
+      const response = await fetch("../src/data/projects.json");
+      this.projectsList = await response.json();
+      return this.projectsList;
     },
   },
 });

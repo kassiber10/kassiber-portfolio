@@ -6,8 +6,8 @@
       <p>{{ descLong }}</p>
       <img :src="skills" alt="dev skill icons" />
       <hr />
-      <button @click="$emit('back')">Back</button>
-      <button><a :href="url" target="_blank">Visit Project</a></button>
+      <SecondaryButton @click="$emit('back')">Back</SecondaryButton>
+      <PrimaryButton v-if="url" @click="visitProject">Visit Project</PrimaryButton>
     </div>
     <div>
       <img :src="image" />
@@ -17,44 +17,44 @@
 
 <script>
 export default {
-  name: "ProjectDetails",
-  emits: "back",
-  props: {
-    id: {
-      type: Number,
-      required: true,
+    name: "ProjectDetails",
+    emits: ["back"],
+    props: {
+        id: {
+            type: Number,
+            required: true,
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+        descLong: {
+            type: String,
+            required: false,
+        },
+        image: {
+            type: String,
+            required: true,
+        },
+        skills: {
+            type: String,
+            required: true,
+        },
+        url: {
+            type: String,
+            required: false,
+        },
     },
-    title: {
-      type: String,
-      required: true,
+    methods: {
+        visitProject() {
+            window.open(this.url, '_blank');
+        },
     },
-    description: {
-      type: String,
-      required: true,
-    },
-    descLong: {
-      type: String,
-      required: false,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    skills: {
-      type: String,
-      required: true,
-    },
-    url: {
-      type: String,
-      required: false,
-    },
-  },
-  methods: {
-    visitProject() {
-      location.href = this.url;
-      location.target = blank;
-    },
-  },
+    
 };
 </script>
 
@@ -65,8 +65,7 @@ img {
 div {
   flex-direction: column;
   text-align: left;
-  margin: 1rem;
-  /* background-color: white; */
+  margin: 1rem;   
   width: 100%;
 }
 p {

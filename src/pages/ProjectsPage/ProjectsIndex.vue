@@ -1,7 +1,9 @@
 <template>
   <section>
+    <h2 v-if="isLoading">...loading...</h2>
+    <h2 v-if="error">{{ error }}</h2>
     <project-card
-    class="project-card"
+      class="project-card"
       v-if="!isLoading && !projectToLoad"
       v-for="project in projects"
       :key="project.id"
@@ -11,7 +13,6 @@
       :skills="project.skills"
       @click="loadProjectDetail(project.id)"
     ></project-card>
-    <p v-if="isloading">...loading...</p>
     <project-details
       v-if="projectToLoad"
       :id="projectToLoad.id"
@@ -27,10 +28,10 @@
 </template>
 
 <script>
-import ProjectCard from "../../components/molecules/ProjectCard.vue";
-import ProjectDetails from "./ProjectDetails.vue";
 import { mapStores } from "pinia";
 import { useProjectsStore } from "../../stores/projects";
+import ProjectCard from "../../components/molecules/ProjectCard.vue";
+import ProjectDetails from "./ProjectDetails.vue";
 export default {
   name: "ProjectsIndex",
   components: { ProjectCard, ProjectDetails },
@@ -42,7 +43,7 @@ export default {
           title: "",
           description: "",
           image: "",
-          skills: [],
+          skills: "",
         },
       ],
       projectToLoad: undefined,
@@ -51,6 +52,7 @@ export default {
     };
   },
   async mounted() {
+    console.log(this.isLoading);
     // load projects from pinia
     this.isLoading = true;
     try {
@@ -58,8 +60,8 @@ export default {
     } catch (error) {
       this.error = error.message || "Something went wrong!";
     }
-
     this.isLoading = false;
+    console.log(this.isLoading);
   },
   methods: {
     loadProjectDetail(id) {
@@ -78,14 +80,24 @@ export default {
 </script>
 
 <style scoped>
-.project-card:last-child {
+.project-card:nth-of-type(even) {
   margin-right: 0;
-
+}
+section {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.project-card {
+  min-width: 200px;
 }
 h2 {
   text-align: right;
-  /* background-color: var(--color-white); */
   border-bottom: 1px dashed var(--color-white);
 }
 
+@media (max-width: 600px) {
+  section {
+    grid-template-columns: auto;
+  }
+}
 </style>

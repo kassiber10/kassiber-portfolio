@@ -1,10 +1,10 @@
 <template>
   <nav>
     <ul>
-      <li @click="$emit('clickedLink', 'projects')">
-        <router-link to="/projects">Projects</router-link>
+      <li >
+        <router-link to="/projects" @click="$emit('clickedLink', 'projects')">Projects</router-link>
       </li>
-      <li @click="$emit('clickedLink', 'contact')"><router-link to="/contact">Contact</router-link></li>
+      <li ><router-link to="/contact" @click="$emit('clickedLink', 'contact')">Contact</router-link></li>
     </ul>
   </nav>
 </template>
@@ -19,7 +19,7 @@ export default {
 <style scoped>
 nav {
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 li {
