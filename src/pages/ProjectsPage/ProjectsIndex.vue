@@ -1,6 +1,7 @@
 <template>
   <section>
-    <h2 v-if="isLoading">...loading...</h2>
+    <!-- <h2 v-if="isLoading">...loading...</h2> -->
+    <img v-if="isLoading" src="../../assets/images/site/skateboarding.gif" />
     <h2 v-if="error">{{ error }}</h2>
     <project-card
       class="project-card"
@@ -52,8 +53,6 @@ export default {
     };
   },
   async mounted() {
-    console.log(this.isLoading);
-    // load projects from pinia
     this.isLoading = true;
     try {
       this.projects = await this.projectsStore.getProjects;
@@ -61,7 +60,6 @@ export default {
       this.error = error.message || "Something went wrong!";
     }
     this.isLoading = false;
-    console.log(this.isLoading);
   },
   methods: {
     loadProjectDetail(id) {
@@ -98,6 +96,9 @@ h2 {
 @media (max-width: 600px) {
   section {
     grid-template-columns: auto;
+  }
+  article {
+    margin-bottom: 3.5rem;
   }
 }
 </style>

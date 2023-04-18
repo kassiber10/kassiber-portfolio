@@ -6,14 +6,11 @@
       <img :src="image" />
       <img :src="skills" class="skills" />
     </div>
-    <!-- <button>Details</button> -->
     <PrimaryButton>Details</PrimaryButton>
   </article>
 </template>
 
 <script>
-import PrimaryButton from "../atoms/PrimaryButton.vue";
-
 export default {
   name: "ProjectCard",
   props: {
@@ -34,8 +31,6 @@ export default {
       required: true,
     },
   },
-  methods: {},
-  components: { PrimaryButton },
 };
 </script>
 
@@ -59,7 +54,6 @@ article:hover {
   border-radius: 0;
   border-bottom: 2px solid var(--color-light);
 }
-
 button {
   width: 100%;
   margin-top: 0.5rem;

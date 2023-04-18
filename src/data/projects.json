@@ -4,7 +4,7 @@
     "title": "Svelte Skill Streak",
     "description": "A brief description of the project",
     "descLong": "The project is about an AI based learning companion based on ChatGPT V.3. It's possible to set an event date and a daily learning effort. The app is also connected to Unsplash to fetch a new background image based on the selected topic every day. The project is work in progress, therefore no live version is available at this time. The project was completely made with Svelte Kit",
-    "image": "../src/assets/images/projects/pro1.jpg",
+    "image": "../src/assets/images/dd.png",
     "skills": "https://skillicons.dev/icons?i=ts,svelte,html,css,github"
   },
   {
