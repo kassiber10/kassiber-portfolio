@@ -80,8 +80,8 @@ h1 {
   flex-direction: column;
  }
  p >img {
-background-color: brown;
-min-width: 8rem;
+  background-color: brown;
+  min-width: 8rem;
  }
  div > img {
   margin-right: 1.5rem;

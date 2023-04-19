@@ -1,10 +1,12 @@
 <template>
   <h1 v-if="responseMsg">{{ responseMsg }}</h1>
-  <h2>I would love to hear from you!</h2>
-  <p>
-    Just drop me a line and I'll get back to you as soon as possible. Have nice
-    day:)
-  </p>
+  <div v-else>
+    <h2>I would love to hear from you!</h2>
+    <p>
+      Just drop me a line and I'll get back to you as soon as possible. Have
+      nice day:)
+    </p>
+  </div>
   <form @submit.prevent="submitContactForm" id="contactform">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" v-model="formData.name" />
@@ -22,7 +24,7 @@
       Please write me a message!
     </p>
     <PrimaryButton>Get in touch</PrimaryButton>
-    <!-- <SecondaryButton @click="resetForm">Reset</SecondaryButton> -->
+    <SecondaryButton @click.prevent="resetForm">Reset</SecondaryButton>
   </form>
 </template>
 
@@ -44,9 +46,7 @@ export default {
   },
   computed: {
     validateForm() {
-     
       this.checkValue = true;
-      // const validEmail = /\S+@\S+\.\S+/.test(this.formData.email);
 
       if (!Object.values(this.formData).every((data) => data !== "")) {
         return false;
@@ -57,11 +57,10 @@ export default {
   methods: {
     async submitContactForm() {
       this.validateForm;
-      const fd = new FormData(contactform);
       if (this.validateForm) {
+        const fd = new FormData(contactform);
         axios
-        .post(API, fd)
-          // .post("https://www.kassiber.org/incl/email/contact.php", fd)
+          .post(API, fd)
           .then((response) => {
             if (response.data.emailError === undefined) {
               this.responseMsg = response.data.emailSentSuccess;
@@ -74,6 +73,9 @@ export default {
             console.log(error);
           });
       }
+    },
+    resetForm() {
+      this.formData = {};
     },
   },
 };
