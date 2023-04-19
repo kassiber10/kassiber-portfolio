@@ -1,13 +1,11 @@
 <template>
   <header>
     <h1>
-      <router-link to="/" @click="breadcrumb = ''"
-        ><span>Hello, I'm Alex</span></router-link
-      >
+      <router-link to="/"><span>Hello, I'm Alex</span></router-link>
     </h1>
     <h5>new WebDeveloper();</h5>
   </header>
-  <nav-element @clicked-link="clickedLink"></nav-element>
+  <nav-element></nav-element>
 </template>
 
 <script>

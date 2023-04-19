@@ -28,7 +28,7 @@
 
 <script>
 import axios from "axios";
-// const API = import.meta.env.API;
+const API = import.meta.env.VITE_API;
 export default {
   name: "ContactIndex",
   data() {
@@ -59,7 +59,8 @@ export default {
 
       if (this.validateForm) {
         axios
-          .post("https://www.kassiber.org/incl/email/contact.php", fd)
+        .post(API, fd)
+          // .post("https://www.kassiber.org/incl/email/contact.php", fd)
           .then((response) => {
             if (response.data.emailError === undefined) {
               this.responseMsg = response.data.emailSentSuccess;

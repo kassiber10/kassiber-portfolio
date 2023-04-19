@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import projects from "../data/projects.json";
 export const useProjectsStore = defineStore("projects", {
   state: () => ({
     projectsList: [
@@ -8,6 +9,8 @@ export const useProjectsStore = defineStore("projects", {
         descLong: "",
         image: "",
         skills: "",
+        url: "",
+        github: "",
       },
     ],
   }),
@@ -16,8 +19,9 @@ export const useProjectsStore = defineStore("projects", {
   },
   actions: {
     async fetchProjects() {
-      const response = await fetch("./src/data/projects.json");
-      this.projectsList = await response.json();
+      // const response = await fetch("./src/data/projects.json");
+      // this.projectsList = await response.json();
+      this.projectsList = projects;
       return this.projectsList;
     },
   },
