@@ -16,7 +16,7 @@ export const useProjectsStore = defineStore("projects", {
   },
   actions: {
     async fetchProjects() {
-      const response = await fetch("../src/data/projects.json");
+      const response = await fetch("./src/data/projects.json");
       this.projectsList = await response.json();
       return this.projectsList;
     },
