@@ -3,8 +3,8 @@ import { createPinia } from "pinia";
 import router from "./router";
 import App from "./App.vue";
 import "./assets/style.css";
-import PrimaryButton from "./components/Atoms/PrimaryButton.vue";
-import SecondaryButton from "./components/Atoms/SecondaryButton.vue";
+import PrimaryButton from "./components/atoms/PrimaryButton.vue";
+import SecondaryButton from "./components/atoms/SecondaryButton.vue";
 
 const app = createApp(App);
 const pinia = createPinia();
