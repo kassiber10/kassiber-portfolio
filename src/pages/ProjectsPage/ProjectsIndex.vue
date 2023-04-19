@@ -1,7 +1,7 @@
 <template>
   <section>
-    <!-- <h2 v-if="isLoading">...loading...</h2> -->
-    <img v-if="isLoading" src="../../assets/images/site/skateboarding.gif" />
+    <h2 v-if="isLoading">...loading...</h2>
+    <!-- <img v-if="isLoading" src="../../assets/images/site/skateboarding.gif" /> -->
     <h2 v-if="error">{{ error }}</h2>
     <project-card
       class="project-card"
@@ -23,6 +23,7 @@
       :image="projectToLoad.image"
       :skills="projectToLoad.skills"
       :url="projectToLoad.url"
+      :github="projectToLoad.github"
       @back="back"
     ></project-details>
   </section>

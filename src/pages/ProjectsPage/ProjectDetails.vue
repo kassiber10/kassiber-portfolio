@@ -10,17 +10,30 @@
       <PrimaryButton v-if="url" @click="visitProject"
         >Visit Project</PrimaryButton
       >
+      <PrimaryButton v-if="github" @click="visitGithub"
+        >Visit GitHub</PrimaryButton
+      >
     </div>
     <div>
-      <img :src="image" />
+      <img :src="image" @click="showModal = true"/>
     </div>
+  </section>
+  <section v-if="showModal">
+    <PicturesModal @close="showModal = false" :fullSizeUrl="image" :projectTitle="title" />
   </section>
 </template>
 
 <script>
+import PicturesModal from "./PicturesModal.vue";
 export default {
   name: "ProjectDetails",
+  components: { PicturesModal },
   emits: ["back"],
+  data() {
+    return {
+      showModal: false,
+    };
+  },
   props: {
     id: {
       type: Number,
@@ -50,10 +63,17 @@ export default {
       type: String,
       required: false,
     },
+    github: {
+      type: String,
+      required: false,
+    },
   },
   methods: {
     visitProject() {
       window.open(this.url, "_blank");
+    },
+    visitGithub() {
+      window.open(this.github, "_blank");
     },
   },
 };
@@ -65,8 +85,10 @@ img {
   max-width: 100%;
 }
 div:first-of-type {
-  width: 90%;
+  /* width: 90%; */
+  margin-right: 2rem;
 }
+
 div {
   flex-direction: column;
   text-align: left;
@@ -81,7 +103,7 @@ button {
 }
 @media (max-width: 600px) {
   div:first-of-type {
-    width: 100%;
+    margin-right: 0;
   }
 }
 </style>

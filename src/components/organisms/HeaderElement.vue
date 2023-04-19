@@ -8,8 +8,6 @@
     <h5>new WebDeveloper();</h5>
   </header>
   <nav-element @clicked-link="clickedLink"></nav-element>
-  <!-- <h2 v-if="breadcrumb" class="breadcrumb">{{ breadcrumb }}</h2>
-  <h2 v-else class="breadcrumb">a Fullstack Developer with a Frontend Focus</h2> -->
 </template>
 
 <script>
@@ -17,16 +15,6 @@ import NavElement from "./NavElement.vue";
 export default {
   components: {
     NavElement,
-  },
-  data() {
-    return {
-      breadcrumb: "",
-    };
-  },
-  methods: {
-    clickedLink(e) {
-      this.breadcrumb = e;
-    },
   },
 };
 </script>
@@ -98,5 +86,4 @@ h5 {
 .breadcrumb::before {
   content: ":: ";
 }
-
 </style>

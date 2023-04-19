@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h1 v-if="isLoading">...loading...</h1>
     <div>
       <img src="../assets/images/site/ak.png" />
       
@@ -23,7 +24,7 @@
     technologies and improve my skills constantly. My biggest motivation is
     the joy I feel during the process while researching, troubleshooting and
     and get the projects running which is incomparable to most of other
-    Positons.</p>
+    professional experiences.</p>
   </p>
 </article>
   </section>
@@ -32,6 +33,14 @@
 <script>
 export default {
   name: "LandingPage",
+  data() {
+    return {
+      isLoading: true,
+    }
+  },
+  async mounted() {
+    this.isLoading = false;
+  },
 };
 </script>
 
