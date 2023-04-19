@@ -92,10 +92,14 @@ label {
 }
 input,
 textarea {
+  box-sizing: border-box;
+  padding: 0.5rem;
   background-color: inherit;
   border: 1px solid var(--color-light);
   border-radius: 2px;
   margin-bottom: 1rem;
+  color: var(--color-white);
+
 }
 button {
   margin-top: 1.5rem;

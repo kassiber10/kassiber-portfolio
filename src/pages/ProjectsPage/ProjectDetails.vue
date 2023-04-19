@@ -2,9 +2,9 @@
   <section>
     <div>
       <h2>{{ title }}</h2>
-      <p>{{ description }}</p>
+      <p><strong>{{ description }}</strong></p>
       <p>{{ descLong }}</p>
-      <img :src="skills" alt="dev skill icons" />
+      <img :src="skills" class="skills" alt="dev skill icons" />
       <hr />
       <SecondaryButton @click="$emit('back')">Back</SecondaryButton>
       <PrimaryButton v-if="url" @click="visitProject"
@@ -52,7 +52,7 @@ export default {
       required: false,
     },
     image: {
-      type: String,
+      type: Array,
       required: true,
     },
     skills: {
@@ -85,7 +85,6 @@ img {
   max-width: 100%;
 }
 div:first-of-type {
-  /* width: 90%; */
   margin-right: 2rem;
 }
 
@@ -100,6 +99,12 @@ p {
 button {
   margin-right: 1rem;
   margin-bottom: 1rem;
+}
+strong {
+  font-weight: bold;
+}
+.skills {
+  margin-top: 1rem;
 }
 @media (max-width: 600px) {
   div:first-of-type {

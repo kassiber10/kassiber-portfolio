@@ -1,7 +1,6 @@
 <template>
   <section>
     <h2 v-if="isLoading">...loading...</h2>
-    <!-- <img v-if="isLoading" src="../../assets/images/site/skateboarding.gif" /> -->
     <h2 v-if="error">{{ error }}</h2>
     <project-card
       class="project-card"
@@ -44,7 +43,7 @@ export default {
           id: "",
           title: "",
           description: "",
-          image: "",
+          image: [],
           skills: "",
         },
       ],
@@ -71,6 +70,7 @@ export default {
     back() {
       this.projectToLoad = !this.projectToLoad;
     },
+   
   },
   computed: {
     ...mapStores(useProjectsStore),

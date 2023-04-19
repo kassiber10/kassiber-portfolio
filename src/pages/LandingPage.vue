@@ -5,26 +5,30 @@
       <img src="../assets/images/site/ak.png" />      
       <div class="skills">
         <p>experienced in</p>
-      <img src="https://skillicons.dev/icons?i=js,html,css,vuejs,php,mysql,github" />
+      <img src="https://skillicons.dev/icons?i=js,html,css,vuejs" />
+      <img src="https://skillicons.dev/icons?i=php,mysql,bootstrap,github" />
       <p>currently learning</p>
-      <img src="https://skillicons.dev/icons?i=svelte,express,java,firebase" />
+      <img src="https://skillicons.dev/icons?i=svelte,nodejs,express,java,firebase" />
     </div>
     </div>
     <article>
   <h1>Fullstack Developer with Design Background</h1>
   <p>
-    I’ve recently finished the academic webdevelopment program at
+    I’ve recently finished the academic Web Development program at
     FH Technikum Vienna. I have most experience in frontend development and
-    strong design background due to my previous experiences. I prefer working
-    with Vue.js as a Javascript framework. Basically I'm learning constantly and keep improving my skills. Actually I'm very much into getting to know Svelte and Svelte Kit better. 
-    <br /><br /><h3>What I am looking
-    for...</h3><p> I'm looking for a Junior Frontend Position with professional
+    strong design background due to my previous experiences. <p>I prefer working
+    with Vue.js as a Javascript framework. Basically I'm learning and working on projects constantly. Currently I'm improving my skills in Svelte/Svelte Kit and Node.js.</p> 
+    <br /><h3>What I am looking for...</h3><p> I'm looking for a Junior Frontend Position with professional
     development prospects in which I’ll be able to work with latest
     technologies and improve my skills constantly. My biggest motivation is
     the joy I feel during the process while researching, troubleshooting and
     and get the projects running which is incomparable to most of other
     professional experiences.</p>
   </p>
+  <h3>Experienced in...</h3>
+  <p>Javascript, CSS, HTML, Vue.js, PHP, SQL, Bootstrap, Github, Adobe Suite</p>
+  <h3>Currently learning...</h3>
+  <p>Svelte/Svelte Kit, Express.js, Node.js, JAVA, Firebase</p>
 </article>
   </section>
 </template>
@@ -52,6 +56,10 @@ div {
 }
 .skills {
   width: 100%;
+  
+}
+.skills>img {
+  margin-bottom: .5rem;
 }
 p {
   text-align: left;

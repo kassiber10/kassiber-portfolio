@@ -68,7 +68,6 @@ span {
   -webkit-background-clip: text;
   color: transparent;
 }
-
 h1 {
   margin: 0;
 }
@@ -78,10 +77,8 @@ h5 {
   font-size: clamp(3.5vw, 2rem, 1.5rem);
   font-weight: 300;
 }
-.breadcrumb {
-  text-transform: uppercase;
-}
-.breadcrumb::before {
-  content: ":: ";
+span:hover::before {
+  content: "➔ ";
+  padding: 0 0 0 1rem;
 }
 </style>
