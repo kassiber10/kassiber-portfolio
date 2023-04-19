@@ -44,6 +44,7 @@ export default {
   },
   computed: {
     validateForm() {
+     
       this.checkValue = true;
       // const validEmail = /\S+@\S+\.\S+/.test(this.formData.email);
 
@@ -55,8 +56,8 @@ export default {
   },
   methods: {
     async submitContactForm() {
+      this.validateForm;
       const fd = new FormData(contactform);
-
       if (this.validateForm) {
         axios
         .post(API, fd)
