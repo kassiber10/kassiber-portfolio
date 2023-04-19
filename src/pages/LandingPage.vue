@@ -2,8 +2,7 @@
   <section>
     <h1 v-if="isLoading">...loading...</h1>
     <div>
-      <img src="../assets/images/site/ak.png" />
-      
+      <img src="../assets/images/site/ak.png" />      
       <div class="skills">
         <p>experienced in</p>
       <img src="https://skillicons.dev/icons?i=js,html,css,vuejs,php,mysql,github" />
@@ -49,13 +48,11 @@ h1 {
   font-size: clamp(3vw, 3rem, 2rem);  
 }
 div {  
-  margin-right: 3.5rem;
-  
+  margin-right: 3.5rem;  
 }
 .skills {
   width: 100%;
 }
-
 p {
   text-align: left;
 }
@@ -89,11 +86,7 @@ min-width: 8rem;
  div > img {
   margin-right: 1.5rem;
  }
- /* section {
-   flex-direction: column;
- } */
  article {
- /* background-color: aqua; */
  margin-left: 0;
 }
 }
