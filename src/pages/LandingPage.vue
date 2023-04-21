@@ -16,15 +16,14 @@
   <p>
     I’ve recently finished the academic Web Development program at
     FH Technikum Vienna. I have most experience in frontend development and
-    strong design background due to my previous experiences. <p>I prefer working
+    strong design background due to my previous experiences.</p> <p>I prefer working
     with Vue.js as a Javascript framework. Basically I'm learning and working on projects constantly. Currently I'm improving my skills in Svelte/Svelte Kit and Node.js.</p> 
     <br /><h3>What I am looking for...</h3><p> I'm looking for a Junior Frontend Position with professional
     development prospects in which I’ll be able to work with latest
     technologies and improve my skills constantly. My biggest motivation is
-    the joy I feel during the process while researching, troubleshooting and
-    and get the projects running which is incomparable to most of other
+    the joy I feel during the process while researching, troubleshooting 
+    and getting the projects running which is incomparable to most of other
     professional experiences.</p>
-  </p>
   <h3>Experienced in...</h3>
   <p>Javascript, CSS, HTML, Vue.js, PHP, SQL, Bootstrap, Github, Adobe Suite</p>
   <h3>Currently learning...</h3>
