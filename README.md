@@ -7,7 +7,7 @@ Insert an .env file outside the src folder and add base API address
 
 ## Getting Started
 
-git clone https://github.com/kassiber10/vue-inn-booking.git
+git clone https://github.com/kassiber10/kassiber-portfolio.git
 cd vue-inn-booking
 npm install
 npm run dev or
