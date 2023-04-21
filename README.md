@@ -8,7 +8,7 @@ Insert an .env file outside the src folder and add base API address
 ## Getting Started
 
 git clone https://github.com/kassiber10/kassiber-portfolio.git
-cd vue-inn-booking
+cd kassiber-portfolio
 npm install
 npm run dev or
 yarn dev
