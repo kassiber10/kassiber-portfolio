@@ -1,7 +1,19 @@
-# Vue 3 + Vite
+# Personal Portfolio
+Here i'm showcasing of all my recent projects.  
+I'm constantly working on new ones so keep checking my [portfolio site](https://kassiber-portfolio.vercel.app) for updates
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Set Environment Variables
 
-## Recommended IDE Setup
+Insert an .env file outside the src folder and add base API address
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Getting Started
+
+git clone https://github.com/kassiber10/kassiber-portfolio.git
+cd kassiber-portfolio  
+npm install  
+npm run dev or  
+yarn dev
+
+### Recommended IDE Setup
+
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) 
