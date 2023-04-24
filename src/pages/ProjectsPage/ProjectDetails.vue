@@ -26,10 +26,10 @@
 
 <script>
 import PicturesModal from "./PicturesModal.vue";
-import ProjectsSwiper from "../../components/organisms/ProjectsSwiper.vue";
+
 export default {
   name: "ProjectDetails",
-  components: { PicturesModal, ProjectsSwiper },
+  components: { PicturesModal },
   emits: ["back"],
   data() {
     return {
