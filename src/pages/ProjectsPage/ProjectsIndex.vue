@@ -43,7 +43,7 @@ export default {
           id: "",
           title: "",
           description: "",
-          image: [],
+          image: "",
           skills: "",
         },
       ],

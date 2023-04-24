@@ -1,5 +1,6 @@
 <template>
   <section>
+    
     <div>
       <h2>{{ title }}</h2>
       <p><strong>{{ description }}</strong></p>
@@ -25,9 +26,10 @@
 
 <script>
 import PicturesModal from "./PicturesModal.vue";
+import ProjectsSwiper from "../../components/organisms/ProjectsSwiper.vue";
 export default {
   name: "ProjectDetails",
-  components: { PicturesModal },
+  components: { PicturesModal, ProjectsSwiper },
   emits: ["back"],
   data() {
     return {
@@ -52,7 +54,7 @@ export default {
       required: false,
     },
     image: {
-      type: Array,
+      type: String,
       required: true,
     },
     skills: {

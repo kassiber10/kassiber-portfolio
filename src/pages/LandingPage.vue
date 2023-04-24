@@ -65,6 +65,7 @@ p {
 }
 img {
   width: max(150px, 20%);
+  height: max(auto, 20%);
   margin-right: 6rem;
 }
 article {
@@ -73,7 +74,7 @@ article {
 @media (max-width: 600px) {
 .skills {
   flex-direction: column;
-  align-self: flex-end;
+  align-self: flex-start;
 }
 h1 {
   margin-top: 2rem;
@@ -95,6 +96,12 @@ h1 {
  }
  article {
  margin-left: 0;
+}
+img {
+  max-height: 180px;
+}
+p {
+  margin-top: 0;
 }
 }
 
