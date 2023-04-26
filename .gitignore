@@ -11,5 +11,4 @@ coverage
 *.local
 incl
 .env
-src/pages/ProjectsPage/ProjectDetails___SWIPER.vue
-src/components/organisms/ProjectsSwiper.vue
+src/pages/ProjectsPage/ProjectDetails_withourtSWIPER.vue

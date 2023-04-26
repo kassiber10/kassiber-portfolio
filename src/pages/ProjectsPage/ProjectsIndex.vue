@@ -1,31 +1,36 @@
 <template>
-  <section>
-    <h2 v-if="isLoading">...loading...</h2>
-    <h2 v-if="error">{{ error }}</h2>
-    <project-card
-      class="project-card"
-      v-if="!isLoading && !projectToLoad"
-      v-for="project in projects"
-      :key="project.id"
-      :title="project.title"
-      :description="project.description"
-      :image="project.image"
-      :skills="project.skills"
-      @click="loadProjectDetail(project.id)"
-    ></project-card>
-    <project-details
-      v-if="projectToLoad"
-      :id="projectToLoad.id"
-      :title="projectToLoad.title"
-      :description="projectToLoad.description"
-      :descLong="projectToLoad.descLong"
-      :image="projectToLoad.image"
-      :skills="projectToLoad.skills"
-      :url="projectToLoad.url"
-      :github="projectToLoad.github"
-      @back="back"
-    ></project-details>
-  </section>
+  <transition name="nested">
+    <section>
+      <h2 v-if="isLoading">...loading...</h2>
+      <h2 v-if="error">{{ error }}</h2>
+      <project-card
+        class="project-card"
+        v-if="!isLoading && !projectToLoad"
+        v-for="project in projects"
+        :key="project.id"
+        :id="project.id"
+        :title="project.title"
+        :description="project.description"
+        :image="project.image"
+        :skills="project.skills"
+        @click="loadProjectDetail(project.id)"
+      ></project-card>
+
+      <project-details
+        class="details"
+        v-if="projectToLoad"
+        :id="projectToLoad.id"
+        :title="projectToLoad.title"
+        :description="projectToLoad.description"
+        :descLong="projectToLoad.descLong"
+        :image="projectToLoad.image"
+        :skills="projectToLoad.skills"
+        :url="projectToLoad.url"
+        :github="projectToLoad.github"
+        @back="back"
+      ></project-details>
+    </section>
+  </transition>
 </template>
 
 <script>
@@ -40,10 +45,10 @@ export default {
     return {
       projects: [
         {
-          id: "",
+          id: 0,
           title: "",
           description: "",
-          image: "",
+          image: [],
           skills: "",
         },
       ],
@@ -70,7 +75,6 @@ export default {
     back() {
       this.projectToLoad = !this.projectToLoad;
     },
-   
   },
   computed: {
     ...mapStores(useProjectsStore),
@@ -79,6 +83,17 @@ export default {
 </script>
 
 <style scoped>
+.nested-enter-active .details,
+.nested-leave-active .details {
+  transition: all 0.3s ease-in-out;
+}
+
+.nested-enter-from .details,
+.nested-leave-to .details {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
 .project-card:nth-of-type(even) {
   margin-right: 0;
 }

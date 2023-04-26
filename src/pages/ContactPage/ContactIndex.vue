@@ -1,31 +1,38 @@
 <template>
-  <h1 v-if="responseMsg">{{ responseMsg }}</h1>
-  <div v-else>
-    <h2>I would love to hear from you!</h2>
-    <p>
-      Just drop me a line and I'll get back to you as soon as possible. Have
-      nice day:)
-    </p>
+  <div>
+    <h1 v-if="responseMsg">{{ responseMsg }}</h1>
+    <div v-else>
+      <h2>I would love to hear from you!</h2>
+      <p>
+        Just drop me a line and I'll get back to you as soon as possible. Have
+        nice day:)
+      </p>
+    </div>
+    <form @submit.prevent="submitContactForm" id="contactform">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" v-model="formData.name" />
+      <p v-if="!formData.name && checkValue" class="form-error">
+        Please enter a name!
+      </p>
+      <label for="email">E-Mail</label>
+      <input type="email" name="email" id="email" v-model="formData.email" />
+      <p v-if="!formData.email && checkValue" class="form-error">
+        Please enter a valid E-Mail adress!
+      </p>
+      <label for="text">Your message</label>
+      <textarea
+        name="text"
+        id="text"
+        rows="8"
+        v-model="formData.text"
+      ></textarea>
+      <p v-if="!formData.text && checkValue" class="form-error">
+        Please write me a message!
+      </p>
+      <PrimaryButton>Get in touch</PrimaryButton>
+      <SecondaryButton @click.prevent="resetForm">Reset</SecondaryButton>
+    </form>
   </div>
-  <form @submit.prevent="submitContactForm" id="contactform">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" v-model="formData.name" />
-    <p v-if="!formData.name && checkValue" class="form-error">
-      Please enter a name!
-    </p>
-    <label for="email">E-Mail</label>
-    <input type="email" name="email" id="email" v-model="formData.email" />
-    <p v-if="!formData.email && checkValue" class="form-error">
-      Please enter a valid E-Mail adress!
-    </p>
-    <label for="text">Your message</label>
-    <textarea name="text" id="text" rows="8" v-model="formData.text"></textarea>
-    <p v-if="!formData.text && checkValue" class="form-error">
-      Please write me a message!
-    </p>
-    <PrimaryButton>Get in touch</PrimaryButton>
-    <SecondaryButton @click.prevent="resetForm">Reset</SecondaryButton>
-  </form>
 </template>
 
 <script>
@@ -99,7 +106,6 @@ textarea {
   border-radius: 2px;
   margin-bottom: 1rem;
   color: var(--color-white);
-
 }
 button {
   margin-top: 1.5rem;

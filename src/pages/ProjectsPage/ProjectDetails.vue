@@ -1,32 +1,39 @@
 <template>
-  <section>
-    
-    <div>
-      <h2>{{ title }}</h2>
-      <p><strong>{{ description }}</strong></p>
-      <p>{{ descLong }}</p>
-      <img :src="skills" class="skills" alt="dev skill icons" />
-      <hr />
-      <SecondaryButton @click="$emit('back')">Back</SecondaryButton>
-      <PrimaryButton v-if="url" @click="visitProject"
-        >Visit Project</PrimaryButton
-      >
-      <PrimaryButton v-if="github" @click="visitGithub"
-        >Visit GitHub</PrimaryButton
-      >
-    </div>
-    <div>
-      <img :src="image" @click="showModal = true"/>
-    </div>
-  </section>
-  <section v-if="showModal">
-    <PicturesModal @close="showModal = false" :fullSizeUrl="image" :projectTitle="title" />
-  </section>
+  <div>
+    <section>
+      <div>
+        <h2>{{ title }}</h2>
+        <p>
+          <strong>{{ description }}</strong>
+        </p>
+        <p>{{ descLong }}</p>
+        <img :src="skills" class="skills" alt="dev skill icons" />
+        <hr />
+        <SecondaryButton @click="$emit('back')">Back</SecondaryButton>
+        <PrimaryButton v-if="url" @click="visitProject"
+          >Visit Project</PrimaryButton
+        >
+        <PrimaryButton v-if="github" @click="visitGithub"
+          >Visit GitHub</PrimaryButton
+        >
+      </div>
+      <div class="prev-img" @click="showModal = true">
+        <img :src="image[0].src" />
+      </div>
+    </section>
+    <section v-if="showModal">
+      <PicturesModal
+        @close="showModal = false"
+        :fullSizeUrl="image"
+        :projectTitle="title"
+        :id="id"
+      />
+    </section>
+  </div>
 </template>
 
 <script>
 import PicturesModal from "./PicturesModal.vue";
-
 export default {
   name: "ProjectDetails",
   components: { PicturesModal },
@@ -34,6 +41,7 @@ export default {
   data() {
     return {
       showModal: false,
+      show: false,
     };
   },
   props: {
@@ -54,7 +62,7 @@ export default {
       required: false,
     },
     image: {
-      type: String,
+      type: Array,
       required: true,
     },
     skills: {
@@ -85,12 +93,26 @@ export default {
 img {
   box-sizing: border-box;
   max-width: 100%;
+  cursor: pointer;
 }
+.prev-img {
+  text-align: right;
+}
+.prev-img::after {
+  content: "➔ view more images";
+}
+.prev-img:hover {
+  content: "➔ more images";
+  color: var(--color-light);
+  cursor: pointer;
+}
+
 div:first-of-type {
   margin-right: 2rem;
 }
 
 div {
+  box-sizing: border-box;
   flex-direction: column;
   text-align: left;
   width: 100%;
@@ -107,6 +129,24 @@ strong {
 }
 .skills {
   margin-top: 1rem;
+}
+
+.fade-enter-active {
+  animation: bounce-in 0.5s;
+}
+.fade-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @media (max-width: 600px) {
   div:first-of-type {

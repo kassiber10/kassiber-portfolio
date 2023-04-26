@@ -7,7 +7,7 @@ export const useProjectsStore = defineStore("projects", {
         title: "",
         description: "",
         descLong: "",
-        image: "",
+        image: [],
         skills: "",
         url: "",
         github: "",

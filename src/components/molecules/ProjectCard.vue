@@ -3,7 +3,7 @@
     <h2>{{ title }}</h2>
     <div class="content">
       <p>{{ description }}</p>
-      <img :src="image" />
+      <img v-for="img in image.slice(0, 1)" :key="img.id" :src="img.src" />
       <img :src="skills" class="skills" />
     </div>
     <PrimaryButton>Details</PrimaryButton>
@@ -14,6 +14,10 @@
 export default {
   name: "ProjectCard",
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -23,21 +27,20 @@ export default {
       required: true,
     },
     image: {
-      type: String,
+      type: Array,
       required: true,
     },
     skills: {
       type: String,
       required: true,
     },
-  },
+  }
 };
 </script>
 
 <style scoped>
 img {
   width: 100%;
-  /* background-color: aquamarine; */
 }
 img.skills {
   margin-top: 0.5rem;

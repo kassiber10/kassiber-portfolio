@@ -4,20 +4,22 @@
       <h3>{{ projectTitle }}</h3>
       <SecondaryButton @click="$emit('close')">Close</SecondaryButton>
     </div>
-    <img :src="fullSizeUrl" />
+    <projects-swiper :id="id" class="swiper-cont"></projects-swiper>
   </BaseModal>
 </template>
 
 <script>
 import BaseModal from "../../components/organisms/BaseModal.vue";
+import ProjectsSwiper from "../../components/organisms/ProjectsSwiper.vue";
 export default {
   name: "PicturesModal",
   components: {
     BaseModal,
+    ProjectsSwiper,
   },
   props: {
-    fullSizeUrl: {
-      type: String,
+    id: {
+      type: Number,
       required: true,
     },
     projectTitle: {
@@ -25,9 +27,6 @@ export default {
       required: true,
     },
     show: Boolean,
-  },
-  data() {
-    return {};
   },
 };
 </script>
@@ -42,5 +41,12 @@ img {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+}
+.swiper-cont {
+  border-radius: 8px;
+  /* display: inline; */
+  max-width: 100%;
+  margin: 0;
+  height: fit-content;
 }
 </style>
