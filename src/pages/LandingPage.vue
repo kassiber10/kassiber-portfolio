@@ -7,7 +7,7 @@
         <p>experienced in</p>
         <img src="https://skillicons.dev/icons?i=js,html,css,vuejs" />
         <img src="https://skillicons.dev/icons?i=php,mysql,bootstrap,github" />
-        <p>currently learning</p>
+        <p>very interested in</p>
         <img
           src="https://skillicons.dev/icons?i=svelte,nodejs,express,java,firebase"
         />
@@ -39,7 +39,7 @@
       <p>
         Javascript, CSS, HTML, Vue.js, PHP, SQL, Bootstrap, Github, Adobe Suite
       </p>
-      <h3>Currently learning...</h3>
+      <h3>Very interested in...</h3>
       <p>Svelte/Svelte Kit, Express.js, Node.js, JAVA, Firebase</p>
     </article>
   </section>

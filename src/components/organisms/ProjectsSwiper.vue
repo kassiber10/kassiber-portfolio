@@ -5,14 +5,15 @@
     :modules="modules"
     class="swiper"
     :id="id"
-  >
+    >
+   
     <swiper-slide
       v-for="img in projectImages"
       :key="img.id"
       class="swiper-slide"
     >
       <div class="swiper-zoom-container">
-        <img :src="img.src" />
+        <img :src="img.src" loading="lazy"/>
       </div>
     </swiper-slide>
   </swiper>
@@ -77,9 +78,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .swiper {
-  height: 100%;
+  height: 90vh;
+}
+.swiper-pagination {
+  box-sizing: border-box;
+  background-color: rgb(2, 0, 36);
+}
+.swiper-pagination-bullet {
+  background-color: var(--color-white);
+  opacity: 1.0;
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--color-light);
 }
 /* .swiper-slide {
   text-align: center;
@@ -100,7 +112,7 @@ export default {
   height: 100%;
   max-height: 25%;
   width: 100%;
-}*/
+} */
 .swiper-slide img {
   display: block;
   width: 100%;

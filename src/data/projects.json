@@ -17,11 +17,7 @@
     "title": "Fussball unter der Lupe",
     "description": "Fullstack Landingpage with order form",
     "descLong": "The goal was to create the most simple, responsive Landingpage to order a book. The whole project was done with Vue.js in combination with Express.js and Google Cloud Functions",
-    "image": [
-      { "id": 1, "src": "../assets/images/projects/fu-d-lu-5.png" },
-      { "id": 2, "src": "../assets/images/projects/fu-d-lu-3.png" },
-      { "id": 2, "src": "../assets/images/projects/fu-d-lu-2.png" }
-    ],
+    "image": [{ "id": 1, "src": "../assets/images/projects/fu-d-lu-5.png" }],
     "skills": "https://skillicons.dev/icons?i=vue,express,firebase,js,html,css,github",
     "url": "https://www.rolandleser.com",
     "github": "https://github.com/kassiber10/fussball-lupe"
@@ -30,7 +26,7 @@
     "id": 3,
     "title": "22 Pictures",
     "description": "Fullstack Portfoliosite for a Photographer",
-    "descLong": "The goal was to showcase different categories of photos and also some personal information alongside a contact form to get in touch. The categories are divided in three main and four subcategories. The backend was designed with a MySQL database in combination with PHP. The costumer got an custom CMS to upload photos in existing or new Albums. ",
+    "descLong": "The goal was to showcase different categories of photos and also some personal information alongside a contact form to get in touch. The Frontend was completely created with HTML, CSS and class based Vanilla Javascript. The backend was made with PHP and a MySQL database. The costumer also got an custom CMS to upload photos in existing or new Albums. ",
     "image": [
       { "id": 1, "src": "../assets/images/projects/22pictures-1.png" },
       { "id": 2, "src": "../assets/images/projects/22pictures-5.png" },
@@ -45,7 +41,7 @@
     "id": 4,
     "title": "Vue Inn Booking Platform",
     "description": "Bookingsite for Hotels",
-    "descLong": "A component based practice Project for booking hotel rooms. It's possible for Guests to register and reuse their personal data for future bookings or check their booking history. The following Userstories built the framework for the actual implementation.",
+    "descLong": "A component based practice Project for booking hotel rooms. It's possible for Users to register or login to reuse their personal data for future bookings or if already registered check their booking history. Users ar able to view different rooms and their features. The users can check the availability of the chosen room and get instant feedack if or if not the room is available.",
     "image": [
       { "id": 1, "src": "../assets/images/projects/vue-inn-8.png" },
       { "id": 2, "src": "../assets/images/projects/vue-inn-1.png" },

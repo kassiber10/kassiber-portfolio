@@ -3,7 +3,12 @@
     <h2>{{ title }}</h2>
     <div class="content">
       <p>{{ description }}</p>
-      <img v-for="img in image.slice(0, 1)" :key="img.id" :src="img.src" />
+      <img
+        v-for="img in image.slice(0, 1)"
+        :key="img.id"
+        :src="img.src"
+        loading="lazy"
+      />
       <img :src="skills" class="skills" />
     </div>
     <PrimaryButton>Details</PrimaryButton>
@@ -34,7 +39,7 @@ export default {
       type: String,
       required: true,
     },
-  }
+  },
 };
 </script>
 
