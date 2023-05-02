@@ -1,36 +1,20 @@
 <template>
-  <transition name="nested">
-    <section>
-      <h2 v-if="isLoading">...loading...</h2>
-      <h2 v-if="error">{{ error }}</h2>
-      <project-card
-        class="project-card"
-        v-if="!isLoading && !projectToLoad"
-        v-for="project in projects"
-        :key="project.id"
-        :id="project.id"
-        :title="project.title"
-        :description="project.description"
-        :image="project.image"
-        :skills="project.skills"
-        @click="loadProjectDetail(project.id)"
-      ></project-card>
-
-      <project-details
-        class="details"
-        v-if="projectToLoad"
-        :id="projectToLoad.id"
-        :title="projectToLoad.title"
-        :description="projectToLoad.description"
-        :descLong="projectToLoad.descLong"
-        :image="projectToLoad.image"
-        :skills="projectToLoad.skills"
-        :url="projectToLoad.url"
-        :github="projectToLoad.github"
-        @back="back"
-      ></project-details>
-    </section>
-  </transition>
+  <section>
+    <h2 v-if="isLoading">...loading...</h2>
+    <h2 v-if="error">{{ error }}</h2>
+    <project-card
+      class="project-card"
+      v-if="!isLoading"
+      v-for="project in projects"
+      :key="project.id"
+      :id="project.id"
+      :title="project.title"
+      :description="project.description"
+      :image="project.image"
+      :skills="project.skills"
+      @click="$router.push({ name: 'project', params: { id: project.id } })"
+    ></project-card>
+  </section>
 </template>
 
 <script>
@@ -52,11 +36,11 @@ export default {
           skills: "",
         },
       ],
-      projectToLoad: undefined,
       isLoading: false,
       error: "",
     };
   },
+
   async mounted() {
     this.isLoading = true;
     try {
@@ -65,16 +49,6 @@ export default {
       this.error = error.message || "Something went wrong!";
     }
     this.isLoading = false;
-  },
-  methods: {
-    loadProjectDetail(id) {
-      if (this.projects) {
-        this.projectToLoad = this.projects.find((p) => p.id == id);
-      }
-    },
-    back() {
-      this.projectToLoad = !this.projectToLoad;
-    },
   },
   computed: {
     ...mapStores(useProjectsStore),

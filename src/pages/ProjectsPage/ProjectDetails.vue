@@ -2,81 +2,52 @@
   <div>
     <section>
       <div>
-        <h2>{{ title }}</h2>
+        <h2>{{ projectToLoad.title }}</h2>
         <p>
-          <strong>{{ description }}</strong>
+          <strong>{{ projectToLoad.description }}</strong>
         </p>
-        <p>{{ descLong }}</p>
-        <img :src="skills" class="skills" alt="dev skill icons" />
+        <p>{{ projectToLoad.descLong }}</p>
+        <img :src="projectToLoad.skills" class="skills" alt="dev skill icons" />
         <hr />
-        <SecondaryButton @click="$emit('back')">Back</SecondaryButton>
-        <PrimaryButton v-if="url" @click="visitProject"
+        <SecondaryButton @click="$router.push({ name: 'projects' })"
+          >Back</SecondaryButton
+        >
+        <PrimaryButton v-if="projectToLoad.url" @click="visitProject"
           >Visit Project</PrimaryButton
         >
-        <PrimaryButton v-if="github" @click="visitGithub"
+        <PrimaryButton v-if="projectToLoad.github" @click="visitGithub"
           >Visit GitHub</PrimaryButton
         >
       </div>
       <div class="prev-img" @click="showModal = true">
-        <img :src="image[0].src" />
+        <img :src="imageToLoad" />
       </div>
     </section>
     <section v-if="showModal">
       <PicturesModal
         @close="showModal = false"
-        :fullSizeUrl="image"
-        :projectTitle="title"
-        :id="id"
+        :fullSizeUrl="projectToLoad.image"
+        :projectTitle="projectToLoad.title"
+        :id="projectToLoad.id"
       />
     </section>
   </div>
 </template>
 
 <script>
+import { mapStores } from "pinia";
+import { useProjectsStore } from "../../stores/projects";
 import PicturesModal from "./PicturesModal.vue";
 export default {
   name: "ProjectDetails",
   components: { PicturesModal },
-  emits: ["back"],
   data() {
     return {
+      projectToLoad: {},
+      imageToLoad: "",
       showModal: false,
       show: false,
     };
-  },
-  props: {
-    id: {
-      type: Number,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    descLong: {
-      type: String,
-      required: false,
-    },
-    image: {
-      type: Array,
-      required: true,
-    },
-    skills: {
-      type: String,
-      required: true,
-    },
-    url: {
-      type: String,
-      required: false,
-    },
-    github: {
-      type: String,
-      required: false,
-    },
   },
   methods: {
     visitProject() {
@@ -85,6 +56,27 @@ export default {
     visitGithub() {
       window.open(this.github, "_blank");
     },
+    loadProject() {
+      const id = Number(this.$route.params.id);
+      this.projectToLoad = this.projectsStore.getProject(id);
+    },
+    loadImage() {
+      this.imageToLoad = this.projectToLoad.image[0].src;
+    },
+  },
+  async mounted() {
+    this.isLoading = true;
+    try {
+      this.projects = await this.projectsStore.getProjects;
+      this.loadProject();
+      this.loadImage();
+    } catch (error) {
+      this.error = error.message || "Something went wrong!";
+    }
+    this.isLoading = false;
+  },
+  computed: {
+    ...mapStores(useProjectsStore),
   },
 };
 </script>

@@ -5,6 +5,7 @@
       <SecondaryButton @click="$emit('close')">Close</SecondaryButton>
     </div>
     <projects-swiper :id="id" class="swiper-cont"></projects-swiper>
+    <p>double click image to zoom</p>
   </BaseModal>
 </template>
 
@@ -24,6 +25,10 @@ export default {
     },
     projectTitle: {
       type: String,
+      required: true,
+    },
+    fullSizeUrl: {
+      type: Array,
       required: true,
     },
     show: Boolean,

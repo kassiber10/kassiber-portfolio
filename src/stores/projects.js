@@ -4,6 +4,7 @@ export const useProjectsStore = defineStore("projects", {
   state: () => ({
     projectsList: [
       {
+        id: 0,
         title: "",
         description: "",
         descLong: "",
@@ -16,6 +17,9 @@ export const useProjectsStore = defineStore("projects", {
   }),
   getters: {
     getProjects: (state) => state.fetchProjects(),
+    getProject: (state) => {
+      return (id) => state.projectsList.find((p) => p.id === id);
+    },
   },
   actions: {
     async fetchProjects() {
