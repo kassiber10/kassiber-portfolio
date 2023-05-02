@@ -51,10 +51,10 @@ export default {
   },
   methods: {
     visitProject() {
-      window.open(this.url, "_blank");
+      window.open(this.projectToLoad.url, "_blank");
     },
     visitGithub() {
-      window.open(this.github, "_blank");
+      window.open(this.projectToLoad.github, "_blank");
     },
     loadProject() {
       const id = Number(this.$route.params.id);
