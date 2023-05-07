@@ -1,10 +1,9 @@
 <template>
   <section>
-    <h2 v-if="isLoading">...loading...</h2>
+    <BasicSpinner v-if="isLoading" />
     <h2 v-if="error">{{ error }}</h2>
     <project-card
       class="project-card"
-      v-if="!isLoading"
       v-for="project in projects"
       :key="project.id"
       :id="project.id"
@@ -45,6 +44,11 @@ export default {
     this.isLoading = true;
     try {
       this.projects = await this.projectsStore.getProjects;
+      for (let i in this.projects) {
+        const img = new Image();
+        img.src = this.projects[i].image[0].src;
+        await img.decode();
+      }
     } catch (error) {
       this.error = error.message || "Something went wrong!";
     }
@@ -57,17 +61,6 @@ export default {
 </script>
 
 <style scoped>
-.nested-enter-active .details,
-.nested-leave-active .details {
-  transition: all 0.3s ease-in-out;
-}
-
-.nested-enter-from .details,
-.nested-leave-to .details {
-  transform: translateX(30px);
-  opacity: 0;
-}
-
 .project-card:nth-of-type(even) {
   margin-right: 0;
 }

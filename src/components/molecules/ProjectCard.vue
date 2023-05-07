@@ -4,6 +4,7 @@
     <div class="content">
       <p>{{ description }}</p>
       <img
+        class="trans"
         v-for="img in image.slice(0, 1)"
         :key="img.id"
         :src="img.src"
@@ -18,6 +19,11 @@
 <script>
 export default {
   name: "ProjectCard",
+  data() {
+    return {
+      imageToLoad: "",
+    };
+  },
   props: {
     id: {
       type: Number,
@@ -39,11 +45,14 @@ export default {
       type: String,
       required: true,
     },
-  }
+  },
 };
 </script>
 
 <style scoped>
+.trans {
+  opacity: 0.2;
+}
 img {
   width: 100%;
 }

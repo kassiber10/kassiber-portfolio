@@ -1,13 +1,36 @@
 <template>
-    <img class="loading" src="/assets/images/site/skateboarding.gif" alt="Loading..." />
-  </template>
-  
-  <style scoped>
-  .loading {
-    width: 2rem;
-    height: 2rem;
-    margin: auto;
-    padding-top: 2rem;
-    display: block;
+  <div class="loader-cont">
+    <p>..loading</p>
+    <span class="loader" />
+  </div>
+</template>
+
+<style>
+.loader-cont {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.loader {
+  display: flex;
+  z-index: 100;
+  margin: 0 auto;
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--color-white);
+  border-bottom-color: var(--color-medium);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
-  </style>
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
