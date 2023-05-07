@@ -4,7 +4,6 @@
     <div class="content">
       <p>{{ description }}</p>
       <img
-        class="trans"
         v-for="img in image.slice(0, 1)"
         :key="img.id"
         :src="img.src"
@@ -50,9 +49,6 @@ export default {
 </script>
 
 <style scoped>
-.trans {
-  opacity: 0.2;
-}
 img {
   width: 100%;
 }
