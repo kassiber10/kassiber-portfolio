@@ -1,18 +1,18 @@
 <template>
   <section>
     <BasicSpinner v-if="isLoading" />
-    <h2 v-if="error">{{ error }}</h2>
-    <project-card
-      class="project-card"
-      v-for="project in projects"
-      :key="project.id"
-      :id="project.id"
-      :title="project.title"
-      :description="project.description"
-      :image="project.image"
-      :skills="project.skills"
-      @click="$router.push({ name: 'project', params: { id: project.id } })"
+    <project-card v-else
+    class="project-card"
+    v-for="project in projects"
+    :key="project.id"
+    :id="project.id"
+    :title="project.title"
+    :description="project.description"
+    :image="project.image"
+    :skills="project.skills"
+    @click="$router.push({ name: 'project', params: { id: project.id } })"
     ></project-card>
+    <h2 v-if="error">{{ error }}</h2>
   </section>
 </template>
 
