@@ -1,12 +1,11 @@
 <template>
   <header-element></header-element>
   <main>
-    
-    <router-view v-slot="{Component}">
+    <router-view v-slot="{ Component }">
       <transition name="fade">
         <component :is="Component" />
       </transition>
-      </router-view>
+    </router-view>
   </main>
 </template>
 
@@ -21,7 +20,6 @@ export default {
 
 <style scoped>
 .fade-enter-active {
-  
   animation: bounce-in 0.5s;
 }
 .fade-leave-active {
@@ -32,7 +30,7 @@ export default {
     transform: scale(0);
   }
   50% {
-    transform: scale(1.10);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);

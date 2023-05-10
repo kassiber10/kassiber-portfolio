@@ -3,7 +3,21 @@
     <h1 v-if="isLoading">...loading...</h1>
     <div>
       <img src="../assets/images/site/ak.png" />
-      <div class="skills">
+      <div
+        class="skills"
+        @mouseenter="showSkillsDesc = true"
+        @mouseleave="showSkillsDesc = false"
+      >
+        <dialog v-if="showSkillsDesc" :open="showSkillsDesc">
+          <p>
+            Experiences:<br />
+            Javascript, HTML , CSS, Vue.js, PHP, mySQL, Bootstrap, Git/Github
+          </p>
+          <p>
+            Interests:<br />
+            Svelte/Svelte Kit, Node.js, Express.js, Java, Firebase
+          </p>
+        </dialog>
         <p>experienced in</p>
         <img src="https://skillicons.dev/icons?i=js,html,css,vuejs" />
         <img src="https://skillicons.dev/icons?i=php,mysql,bootstrap,github" />
@@ -51,6 +65,7 @@ export default {
   data() {
     return {
       isLoading: true,
+      showSkillsDesc: false,
     };
   },
   async mounted() {
@@ -65,6 +80,16 @@ h1 {
 }
 div {
   margin-right: 3.5rem;
+}
+
+dialog {
+  box-sizing: border-box;
+  background-color: var(--color-dark);
+  padding: 1rem;
+  border-radius: 3px;
+  border: 0;
+  position: relative;
+  width: 100%;
 }
 .skills {
   width: 100%;
